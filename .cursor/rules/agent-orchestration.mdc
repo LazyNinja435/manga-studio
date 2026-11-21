@@ -1,0 +1,31 @@
+---
+description: Multi-agent task decomposition, parallel vs sequential execution, single-facilitator Huddle coordination, write isolation, and handoff contracts across Manga Studio specialists
+alwaysApply: false
+---
+
+# Agent Orchestration & Handoff Discipline
+
+Apply when decomposing multi-step production requests or delegating across `.cursor/agents/{executive-team,creative-team,production-team}/*.md`.
+
+## Execution Ordering
+
+1. **Map dependencies before launching subagents**:
+   - **Parallelize independent work** in a single message batch (e.g., `story-architect` + `lore-researcher` during initial scoping; `continuity-editor` + `manga-editor` during chapter review; separate `character-architect` profiles writing distinct `manga/characters/char-*.md` files; independent Creative Team perspectives during Huddle `roundtable` or `debate` turns).
+   - **Sequence dependent work** strictly in order (e.g., `character-architect` -> `art-director` -> `illustration-artist`; `manga-scriptwriter` -> `storyboard-director` -> `illustration-artist` -> `lettering-artist`).
+2. **Single-Facilitator Huddle Pattern**:
+   - Inside Creative Huddle Mode, `creative-lead` gathers read-only specialist inputs (`plot-architect`, `character-psychologist`, `story-critic`, `lore-researcher`) and delivers one unified conversational synthesis to the creator. Never let multiple agents reply separately to the user, and never recurse `manga-director -> creative-lead -> manga-director`.
+3. **Enforce single-writer isolation**:
+   - Never run two concurrent subagents that create or modify the same file path.
+   - Reserve shared ledger updates (`manga/production/production-tracker.yaml`, `chronology.md`, `decisions.md`, `manga/creative/huddle-session.yaml`) for sequential Director / Creative Lead synthesis after parallel workers return.
+
+## Delegation Payload Checklist
+
+Include in every specialist prompt:
+- Active repository root (`manga/`) and `reading_direction` / `edition_mode` from `manga/manga-manifest.yaml`.
+- Exact upstream artifact paths to read (avoid pasting huge files inline).
+- Target output path(s) and applicable `.cursor/skills/<skill>/SKILL.md` to load.
+- Explicit role boundary (what NOT to modify).
+
+## Required 7-Field Return Summary
+
+Verify every specialist returns: **Result**, **Files Created or Modified**, **Assumptions**, **Unresolved Questions**, **Risks**, **Review Status**, and **Recommended Next Step**. Confirm reported output files exist on disk before advancing.

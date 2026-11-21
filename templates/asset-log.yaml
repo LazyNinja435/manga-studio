@@ -1,0 +1,22 @@
+# Manga Studio — Visual Asset Provenance Log Template
+# Copy to: manga/art/asset-log.yaml
+
+manga_slug: "<manga-slug>"
+native_tool_policy: "Cursor built-in image generation only (verify file on disk before logging)"
+
+assets: []
+  # - asset_id: "char-<slug>-ref-color-v1"
+  #   category: "character-reference" # character-reference | concept | environment | panel | splash | cover
+  #   edition: "color" # color | monochrome
+  #   revision: 1
+  #   supersedes: null
+  #   file_path: "art/concepts/color/char-<slug>-ref-v1.png"
+  #   promoted_approved_path: null # e.g., "art/references/color/char-<slug>-ref.png"
+  #   verified_on_disk: true
+  #   tool_invoked: "cursor:GenerateImage"
+  #   aspect_ratio: "3:4"
+  #   reference_image_paths: []
+  #   prompt: "<exact description passed to GenerateImage>"
+  #   approval_status: "ready-for-approval" # prompt-prepared | draft | ready-for-approval | approved | superseded
+  #   created_at: "<YYYY-MM-DD>"
+  #   notes: ""

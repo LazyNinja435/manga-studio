@@ -1,0 +1,42 @@
+# Manga Studio — Single-Manga Repository Manifest Template
+# Created inside a cloned manga repo via /new-manga at: manga/manga-manifest.yaml
+
+manga_slug: "<manga-slug>"
+title: "<Working or Final Manga Title>"
+subtitle: ""
+status: "draft" # draft | ready-for-approval | approved | in-production | published
+
+creative_profile:
+  genre:
+    - "<primary-genre>"
+    - "<secondary-genre>"
+  target_audience: "<shonen | seinen | shojo | josei | all-ages>"
+  themes:
+    - "<central-theme-1>"
+    - "<central-theme-2>"
+  language: "en"
+
+format:
+  reading_direction: "rtl" # rtl (Traditional Japanese Right-to-Left) | ltr (Left-to-Right)
+  edition_mode: "dual" # monochrome | color | dual (separate Full-Color + Traditional Monochrome editions)
+  page_preset: "JIS-B5" # JIS-B5 (182x257mm + 3mm bleed) | JIS-B6 | ISO-A5 | US-Manga-Trim | custom
+  dimensions_mm:
+    trim_width: 182
+    trim_height: 257
+    bleed: 3
+    safe_width: 150
+    safe_height: 220
+    spine_gutter_min: 18
+  chapter_page_1_side: "left" # In RTL serialization, Page 1 commonly starts on a left page so Pages 2-3 form the first spread
+
+canon_policy:
+  mode: "original-fiction" # original-fiction | strict-canon | faithful-adaptation | inspired-reimagining
+  primary_baseline_source: "" # Populate for mythological, historical, literary, or adapted works
+  secondary_sources_allowed: []
+  notes: "Distinguish confirmed source canon (manga/lore/) from fictional story canon (manga/creative/decisions.yaml)."
+
+approvals:
+  manifest_approved: false
+  series_bible_approved: false
+  art_direction_approved: false
+  last_updated: "<YYYY-MM-DD>"

@@ -1,0 +1,36 @@
+---
+description: Director-first interaction, active Huddle Mode check, and specialist routing protocol for all Manga Studio requests
+alwaysApply: true
+---
+
+# Director-First Routing Protocol
+
+Treat every ordinary user message in this workspace as an instruction to the **Manga Director** (`AGENTS.md`). Users never need to name internal subagents, skills, or file paths manually.
+
+## Turn-Start Huddle Check
+
+1. Check if `manga/creative/huddle-session.yaml` exists with `status: active`, OR if the user explicitly invoked `/huddle` (or explicit triggers like *"Start a creative huddle"* / *"Enter huddle mode"*).
+2. **If Huddle Mode is active**: Route to **Creative Huddle Mode** (`.cursor/rules/creative-huddle.mdc`), operating through **Creative Lead** (`creative-lead`) as single facilitator until the user pauses or ends the huddle. Never silently auto-start a persistent huddle from casual brainstorming.
+3. **If no active huddle**: Follow normal **Manga Director** production routing below.
+
+## Production Routing Map
+
+- **Series premise, worldbuilding, story arcs** -> `story-architect` (+ `lore-researcher` when canonical/historical)
+- **Mythology, history, source comparison, canon verification** -> `lore-researcher`
+- **Character profiles, psychology, costumes, abilities** -> `character-architect`
+- **Chapter scripts, panel beats, dialogue** -> `manga-scriptwriter`
+- **Panel layouts, RTL/LTR reading flow, camera, spreads** -> `storyboard-director`
+- **Visual identity, palettes, monochrome ink/tone guides** -> `art-director`
+- **Reference sheets, concept art, panels, covers (native image gen)** -> `illustration-artist`
+- **Balloon sequence, captions, SFX, editable lettering** -> `lettering-artist`
+- **Chronology, knowledge, prop/injury/canon/visual audits** -> `continuity-editor` (read-only)
+- **Storytelling quality, pacing, readability review** -> `manga-editor` (read-only)
+- **Edition assembly, B5/print checks, PDF/CBZ readiness** -> `publishing-director`
+- **Complex multi-phase planning or cross-agent arbitration** -> `manga-director` (never self-delegate)
+- **Writers' room brainstorming / debate / workshop (manual `/huddle`)** -> `creative-lead` coordinating `plot-architect`, `character-psychologist`, `story-critic`, and `lore-researcher`
+
+## Guardrails
+
+- Handle trivial status checks directly without spawning unnecessary subagents.
+- Never write `manga/` content into an uninitialized master template repository; manga files belong in cloned single-manga repositories initialized via `/new-manga`.
+- Never claim `.cursor/agents/executive-team/manga-director.md` or `.cursor/agents/creative-team/creative-lead.md` intercepts chat messages at the platform level; the parent Cursor Agent executes this protocol directly.

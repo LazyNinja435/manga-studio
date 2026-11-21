@@ -1,0 +1,25 @@
+# Manga Studio — Creative Decision Log Template
+# Created in cloned manga repos at: manga/creative/decisions.yaml
+# ONLY explicitly user-approved creative choices become binding entries here.
+# Keep unapproved proposals (PROPOSED / EXPLORING / CANDIDATE / REJECTED / DEFERRED)
+# in manga/creative/huddle-session.yaml or manga/creative/ideas/.
+
+manga_slug: "<manga-slug>"
+last_updated: "<YYYY-MM-DD>"
+
+decisions: []
+  # - decision_id: "CDEC-001"
+  #   topic: "<Short decision topic>"
+  #   decision: "<Exact binding creative commitment approved by the user>"
+  #   status: "approved" # approved | superseded
+  #   superseded_by: null # Populate with newer decision_id if later replaced
+  #   canon_type: "story-canon" # story-canon | source-canon-alignment | approved-canon-departure
+  #   reasoning_summary: "<Why this choice won over competing alternatives>"
+  #   related_ideas:
+  #     - "IDEA-002"
+  #   affected_characters: [] # e.g., ["char-protagonist"]
+  #   affected_arcs: []       # e.g., ["arc-01-exile"]
+  #   affected_chapters: []   # e.g., ["ch-01", "ch-02"]
+  #   revision_flags: []      # List existing approved production artifacts needing follow-up updates (never silently rewritten in Huddle)
+  #   approved_by: "user"
+  #   approved_at: "<YYYY-MM-DD>"

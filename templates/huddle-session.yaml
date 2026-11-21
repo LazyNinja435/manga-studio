@@ -1,0 +1,47 @@
+# Manga Studio — Creative Huddle Session State Template
+# Created in cloned manga repos at: manga/creative/huddle-session.yaml
+# Stores concise structured summaries only — never dump full chat transcripts.
+
+session_id: "huddle-001"
+status: "closed" # active | paused | closed
+manga_slug: "<manga-slug>" # Matches manga/manga-manifest.yaml (or "uninitialized-concept" before /new-manga in a clone)
+mode: "roundtable" # roundtable | debate | workshop
+topic: "<Current brainstorming focus>"
+started_at: "<YYYY-MM-DD>"
+last_updated: "<YYYY-MM-DD>"
+
+participants:
+  facilitator: "creative-lead"
+  active_specialists: [] # e.g., [plot-architect, character-psychologist, story-critic, lore-researcher]
+
+working_hypotheses: []
+  # - id: "IDEA-001"
+  #   state: "EXPLORING" # PROPOSED | EXPLORING | CANDIDATE | APPROVED | REJECTED | DEFERRED
+  #   summary: "<Concise concept under active exploration>"
+  #   notes: "<Key tension or question>"
+
+candidate_ideas: []
+  # - id: "IDEA-002"
+  #   state: "CANDIDATE"
+  #   summary: "<Promising proposal awaiting creator decision — NOT yet approved>"
+  #   tradeoffs: "<Core upside vs. risk>"
+
+approved_decisions: []
+  # - decision_id: "CDEC-001" # Canonical record lives in manga/creative/decisions.yaml
+  #   summary: "<One-line summary of explicitly user-approved choice>"
+
+rejected_ideas: []
+  # - id: "IDEA-003"
+  #   state: "REJECTED"
+  #   summary: "<Discarded concept>"
+  #   reason: "<Why creator rejected it — prevents recycling>"
+
+deferred_ideas: []
+  # - id: "IDEA-004"
+  #   state: "DEFERRED"
+  #   summary: "<Interesting concept parked for a later arc or discussion>"
+
+open_questions: []
+  # - "<Unresolved creative question for the creator>"
+
+next_discussion_point: "<Suggested next creative angle or question to pick up on resume>"

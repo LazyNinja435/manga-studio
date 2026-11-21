@@ -1,0 +1,51 @@
+# Manga Studio — Production Tracker Template
+# Copy to: manga/production/production-tracker.yaml
+
+manga_slug: "<manga-slug>"
+overall_stage: "concept" # concept | bible-lock | arc-planning | scripting | page-production | review | ready-for-publication | published
+last_updated: "<YYYY-MM-DD>"
+
+foundational_artifacts:
+  manga_manifest:
+    path: "manga/manga-manifest.yaml"
+    status: "draft" # draft | ready-for-approval | approved
+  series_bible:
+    path: "manga/series-bible.md"
+    status: "draft"
+  art_direction:
+    path: "manga/art/art-direction.md"
+    status: "pending" # pending | draft | ready-for-approval | approved
+  creative_decisions:
+    path: "manga/creative/decisions.yaml"
+    status: "active"
+
+character_sheets: []
+  # - character_slug: "<char-slug>"
+  #   bible_path: "characters/char-<slug>.md"
+  #   color_ref_status: "pending"
+  #   monochrome_ref_status: "pending"
+  #   approved: false
+
+arcs: []
+  # - arc_id: "arc-01"
+  #   path: "arcs/arc-01-<slug>.md"
+  #   status: "draft"
+
+chapters: []
+  # - chapter_id: "ch-01"
+  #   title: "<Chapter Title>"
+  #   status: "draft" # draft | scripting | storyboarding | illustrating | lettering | in-review | ready-for-approval | approved | published
+  #   artifacts:
+  #     script: "chapters/ch-01/script.md"
+  #     storyboard: "chapters/ch-01/storyboard.md"
+  #     lettering: "chapters/ch-01/lettering.md"
+  #   quality_gates:
+  #     canon_review: "not-applicable" # not-applicable | pending | passed | changes-requested
+  #     continuity_review: "pending"
+  #     visual_review: "pending"
+  #     lettering_review: "pending"
+  #     editorial_review: "pending"
+  #     publication_review: "pending"
+  #   editions:
+  #     color_export: "pending"
+  #     monochrome_export: "pending"

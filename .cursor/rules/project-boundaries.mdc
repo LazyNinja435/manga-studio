@@ -1,0 +1,24 @@
+---
+description: Single-manga-per-clone repository boundaries, template-vs-manga upstream sync separation, versioned approvals, and draft-vs-published lifecycle protections for files under manga/
+globs: manga/**/*
+alwaysApply: false
+---
+
+# Repository Boundaries, Sync Separation & Artifact Lifecycle
+
+Apply whenever reading, creating, or updating manga content inside `manga/`.
+
+## Single-Manga-Per-Clone Architecture
+
+- **One manga per cloned repository**: Manga Studio is a reusable template repository. Each manga series lives in its own independent Git repository cloned from the master template, with all manga-specific files organized inside `manga/`.
+- **Master template protection**: The master `manga-studio` template repository must never contain a `manga/` directory, manga-specific stories, characters, artwork, or active huddle sessions. Only initialize `manga/` inside a cloned manga repository via `/new-manga` (or explicit creator confirmation).
+- **Upstream sync hygiene**: Keep reusable studio infrastructure (`AGENTS.md`, `.cursor/agents/`, `.cursor/rules/` template rules, `.cursor/skills/`, `.cursor/commands/`, `templates/`, `docs/`) free of manga-specific plot or character data so clones can pull upstream template updates cleanly without merge conflicts. If a manga clone needs local-only Cursor rule tweaks, store them in `.cursor/rules/local-*.mdc`.
+
+## Lifecycle & Versioning Rules
+
+Production artifacts progress through four explicit states recorded in frontmatter or `manga/production/production-tracker.yaml`:
+`draft` -> `ready-for-approval` -> `approved` -> `published`
+
+- **Draft protection**: Exploratory production edits belong in `draft` files, `manga/art/concepts/`, or versioned filenames (`-v2`, `-v3`). Unapproved brainstorming belongs in `manga/creative/huddle-session.yaml` or `manga/creative/ideas/`.
+- **No silent overwrites**: Never overwrite an `approved` or `published` character bible, reference sheet, chapter script, or edition export in place without explicit user authorization.
+- **Provenance preservation**: When superseding an approved asset or decision, keep prior paths and IDs recorded in `manga/art/asset-log.yaml`, `manga/creative/decisions.yaml`, or `manga/production/decisions.md`.

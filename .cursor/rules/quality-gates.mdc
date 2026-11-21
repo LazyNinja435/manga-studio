@@ -1,0 +1,25 @@
+---
+description: Stage-appropriate quality review gates for story, canon, continuity, visuals, lettering, and final manga publication
+alwaysApply: false
+---
+
+# Studio Quality Gates
+
+Apply before promoting any manga artifact from `draft` to `ready-for-approval`, `approved`, or `published`.
+
+## Required Gate Matrix by Artifact
+
+| Deliverable | Required Reviews Before User Approval Gate |
+|---|---|
+| **Series Bible / Story Arc** | Story structure (`manga-editor`) + Canon check (`lore-researcher` if canon-bound) + Continuity (`continuity-editor` for Arc 2+) |
+| **Character Design & Sheet** | Visual spec check (`art-director`) + Canon/cast consistency (`continuity-editor`) |
+| **Chapter Script** | Canon check (if applicable) + Continuity audit (`continuity-editor`) + Editorial pacing/voice review (`manga-editor`) |
+| **Storyboard & Panel Art** | Visual/reference lock (`art-director`) + Spatial/prop continuity (`continuity-editor`) + Action/flow readability (`manga-editor`) |
+| **Lettered Chapter Pages** | Balloon order, safe margins & editable text check (`lettering-artist` + `manga-editor`) |
+| **Final Edition Export** | Full publication gate (`publishing-director`): page order, spread parity, color/monochrome asset separation, JIS B5/print specs, all upstream gates passed |
+
+## Gate Enforcement Rules
+
+- Run `continuity-editor` and `manga-editor` in parallel whenever auditing completed scripts or assembled chapters.
+- Resolve `CRITICAL` and `MAJOR` audit findings before presenting work as `ready-for-approval` (unless surfacing a deliberate creative choice for user decision).
+- Log completed gate verdicts in `manga/production/production-tracker.yaml` and `manga/production/reviews/`.

@@ -1,0 +1,24 @@
+---
+description: Source verification, provenance classification, original-vs-canonical separation, and uncertainty tracking for lore, mythology, history, adaptations, and canon-bound manga
+alwaysApply: false
+---
+
+# Canon Integrity & Provenance Standards
+
+Apply whenever researching sources, writing lore dossiers, debating mythological/historical adaptations in Huddle Mode, or checking story/character drafts against canon.
+
+## Provenance Classification
+
+Tag factual and canonical claims explicitly according to source authority:
+
+- `confirmed-primary` — Directly attested in the manga's locked primary baseline source.
+- `attested-variant` — Present in a named regional, historical, or secondary recension/commentary.
+- `uncertain-disputed` — Scholarly ambiguity, conflicting accounts, or exact locus not directly verifiable in current context.
+- `creative-adaptation` — Original character, scene, dialogue compression, or dramatic invention created for the manga.
+
+## Mandatory Integrity Rules
+
+1. **Never fabricate citations**: Do not invent book/kanda/parva/chapter/verse numbers, dates, quotes, or manuscript attributions. When exact locus cannot be verified from workspace texts or reliable tools, state `exact citation unverified` explicitly.
+2. **Respect `canon_policy`**: Check `manga/manga-manifest.yaml` (`strict-canon`, `faithful-adaptation`, `inspired-reimagining`, or `original-fiction`) before introducing departures.
+3. **Separate fictional story canon from source canon**: Approved creative choices in `manga/creative/decisions.yaml` bind the manga's internal story continuity (`story-canon`), but must never be misrepresented as verified historical or mythological source fact (`source-canon`).
+4. **Escalate major canon departures**: Changing fate, lineage, core vows, or iconic events in canon-bound manga requires explicit user approval.

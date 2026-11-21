@@ -1,0 +1,20 @@
+---
+description: Reference-first character consistency, equipment/injury persistence, and distinct full-color vs traditional monochrome artistic standards
+alwaysApply: false
+---
+
+# Visual Consistency & Dual-Edition Art Standards
+
+Apply whenever designing characters, establishing art direction, storyboarding panels, or generating/reviewing illustrations.
+
+## Reference-First Discipline
+
+1. **Lock before scaling**: Establish and obtain user approval on character reference sheets (`manga/art/references/`) and `manga/art/art-direction.md` before mass-producing chapter panels.
+2. **Enforce invariant visual anchors**: Maintain consistent facial geometry, eye/hair shapes, height ratios, handedness, scars/marks, costume layers, and weapon details across every panel. Pass approved `reference_image_paths` whenever invoking native image generation for established subjects.
+3. **Track state changes**: Reflect sustained injuries, torn clothing, time-of-day lighting, and lost/drawn weapons accurately per `manga/production/chronology.md`.
+
+## Dual-Edition Craft (Color != Grayscale Monochrome)
+
+- **Shared spine, distinct craft**: Full-color and monochrome editions share identical story beats, panel layouts, camera staging, reading order, and character designs, while using native medium execution.
+- **Full-Color Edition**: Controlled master palette, lighting scripts, atmospheric depth, and harmonious value grouping.
+- **Traditional Monochrome Edition**: Intentional black-and-white ink craft—varied contour/detail line weights, solid black (*beta*) spotting, crosshatching, planned screentone densities, speedlines, and crisp white negative space. **Never** convert a color image to grayscale and call it a monochrome manga page.

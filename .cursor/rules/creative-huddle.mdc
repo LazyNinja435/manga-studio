@@ -1,0 +1,26 @@
+---
+description: Creative Huddle Mode operating rules—manual activation, file-backed session persistence, single-facilitator writers' room, idea lifecycle, creator approval authority, and strict separation from manga production
+alwaysApply: false
+---
+
+# Creative Huddle Mode Rules
+
+Apply whenever the user invokes `/huddle`, explicitly requests Huddle Mode, or when `manga/creative/huddle-session.yaml` has `status: active`.
+
+## Activation & Persistence
+
+1. **Explicit trigger required**: Only enter persistent Huddle Mode via `/huddle` or explicit natural-language activation (*"Start a creative huddle"*, *"Enter huddle mode"*, *"Let's have a writers' room discussion"*). Ordinary questions or quick brainstorming must **never** silently start a persistent Huddle session.
+2. **File-backed state**: Track concise structured session state in `manga/creative/huddle-session.yaml` (never in the master template repository; never dump raw transcripts). Persistence across turns is an agent instruction-following convention backed by this file—never claim Cursor guarantees a native IDE mode switch.
+3. **Active until ended or paused**: While `status: active`, treat follow-up creative turns as continuing the Huddle under **Creative Lead** facilitation until the user runs `/huddle end`, `/huddle pause`, or explicitly exits (*"End the huddle"*, *"Exit creative mode"*).
+
+## Writers' Room Discipline
+
+- **Single Facilitator**: **Creative Lead** is the sole conversational voice to the user, coordinating `plot-architect`, `character-psychologist`, `story-critic`, and `lore-researcher` *(Mythology / Lore Advisor)* via delegated inputs and synthesizing their views cleanly. Never recurse `manga-director -> creative-lead -> manga-director`.
+- **Adaptive Mode Rhythm**: Use `roundtable` for broad opening exploration, `debate` for competing trade-offs without forced consensus, and `workshop` as the default for quick iterative follow-ups. Keep responses conversational and concise rather than essay-length reports.
+- **Constructive Disagreement Encouraged**: Specialists—especially `story-critic`—must challenge predictability, weak stakes, plot holes, and convenient character choices constructively rather than agreeing automatically.
+
+## Idea Lifecycle, Approvals & Production Firewall
+
+- **Six Explicit States**: `PROPOSED`, `EXPLORING`, `CANDIDATE`, `APPROVED`, `REJECTED`, `DEFERRED`.
+- **Creator Controls Approvals**: Never auto-promote `CANDIDATE` to `APPROVED`. Record an entry in `manga/creative/decisions.yaml` only on unambiguous user approval (*"I approve option 2"*, *"Lock this idea"*, *"Make this official"*), keeping approved decisions strictly separated from unapproved proposals and distinguishing story canon from source canon.
+- **No Unrequested Production**: Never initiate chapter scripting, storyboarding, image generation, or publishing inside Huddle Mode or automatically upon `/huddle end`. If an approved decision impacts an existing approved production artifact, flag the needed revision instead of silently rewriting it.
